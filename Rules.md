@@ -56,6 +56,7 @@
 * [trailingClosures](#trailingClosures)
 * [trailingCommas](#trailingCommas)
 * [trailingSpace](#trailingSpace)
+* [typeMarks](#typeMarks)
 * [typeSugar](#typeSugar)
 * [unusedArguments](#unusedArguments)
 * [void](#void)
@@ -1393,6 +1394,34 @@ Removes the whitespace at the end of a line.
 Option | Description
 --- | ---
 `--trimwhitespace` | trim trailing space. "always" (default) or "nonblank-lines"
+
+## typeMarks
+
+Add a MARK above the declaration of each type, which aids in Jump Bar discoverability.
+
+<details>
+<summary>Examples</summary>
+
+```diff
++ // MARK: - Subsystem
+
+  class Subsystem { }
+```
+
+```diff
++ // MARK: - Country
+
+  enum Country { }
+```
+
+```diff
++ // MARK: - Packet
+
+  struct Packet { }
+```
+
+</details>
+<br/>
 
 ## typeSugar
 
