@@ -8297,4 +8297,12 @@ class RulesTests: XCTestCase {
         XCTAssertEqual(try format(input, rules: [FormatRules.redundantFileprivate], options: options), output)
         XCTAssertEqual(try format(input + "\n", rules: FormatRules.all, options: options), output + "\n")
     }
+
+    func testTypeMarks() {
+        let input = """
+        """
+        let output = input
+        XCTAssertEqual(try format(input, rules: [FormatRules.typeMarks]), output)
+        XCTAssertEqual(try format(input + "\n", rules: FormatRules.all), output + "\n")
+    }
 }
