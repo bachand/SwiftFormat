@@ -3687,6 +3687,14 @@ public struct _FormatRules {
             }
         }
     }
+
+    /// Add MARKs above type declarations
+    public let typeMarks = FormatRule { formatter in
+        formatter.forEach(.startOfScope) { i, token in
+            // Let's start somewhere
+            print("\(i): \(token)")
+        }
+    }
 }
 
 // MARK: shared helper methods
