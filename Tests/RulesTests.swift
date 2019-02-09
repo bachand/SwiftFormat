@@ -8300,6 +8300,10 @@ class RulesTests: XCTestCase {
 
     func testTypeMarks() {
         let input = """
+        struct Steel {}
+
+        let myVar = 1
+        print(1)
         """
         let output = input
         XCTAssertEqual(try format(input, rules: [FormatRules.typeMarks]), output)

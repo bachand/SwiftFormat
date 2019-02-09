@@ -3690,10 +3690,17 @@ public struct _FormatRules {
 
     /// Add MARKs above type declarations
     public let typeMarks = FormatRule { formatter in
-        formatter.forEach(.startOfScope) { i, token in
-            // Let's start somewhere
-            print("\(i): \(token)")
-        }
+        let typeTokens: [Token] = [
+            .keyword("class"),
+            .keyword("enum"),
+            .keyword("struct"),
+        ]
+
+        let indicesOfTypeTokens = formatter.tokens.enumerated().filter {
+            typeTokens.contains($0.element)
+        }.map { $0.offset }
+
+//        formatter.insertToken(.linebreak("\n"), at: 0)
     }
 }
 
